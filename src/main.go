@@ -1,35 +1,66 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	//Declaracion de constantes
-	const pi float64 = 3.14
-	const pi2 = 3.16
+	// Calcular area de un cuadrado
+	const base_cuadrado = 10
+	areaCuadrado := base_cuadrado * base_cuadrado
+	fmt.Println("Area del Cuadrado es:", areaCuadrado)
 
-	fmt.Println("Pi:", pi)
-	fmt.Println("Pi2:", pi2)
+	x := 10
+	y := 50
 
-	//Declaracion de varaibles
-	base := 12          //Primera forma
-	var altura int = 14 //Segunda forma
-	var area int        //Go no compila si las variables no son usadas
+	// Suma
+	result := x + y
+	fmt.Println("Suma", result)
 
-	fmt.Println(base, altura, area)
+	//Resta
+	result = y - x
+	fmt.Println("Resta", result)
 
-	//Zero values
-	//Go asigna vaalores a variables vacías
-	var a int
-	var b float64
-	var c string
-	var d bool
+	//Multiplicacion
+	result = x * y
+	fmt.Println("Multiplication", result)
 
-	fmt.Println(a, b, c, d)
+	//Division
+	result = y / x
+	fmt.Println("Division", result)
 
-	//Ejercicio
-	//Calcular el áera del cuadrado
-	const baseCuadrado = 10
-	areaCuadrado := baseCuadrado * baseCuadrado
+	//Modulo
+	result = y % x
+	fmt.Println("Residuo", result)
 
-	fmt.Println("El área del cuadrado es:", areaCuadrado)
+	//Incremental
+	x++
+	fmt.Println("Incremental", x)
+
+	//Decrecion
+	x--
+	fmt.Println("Decremental", x)
+
+	//Area rectangulo
+	// a = b x h
+	base_rectangulo := 10
+	altura_rectangulo := 15
+	area_rectangulo := base_rectangulo * altura_rectangulo
+	fmt.Println("Area rectangulo:", area_rectangulo)
+
+	//Area trapecio
+	// a = ((b+b)/2)*h
+	base_mayor := 30
+	base_menor := 20
+	altura_trapecio := 10
+	area_trapecio := ((base_mayor + base_menor) / 2) * altura_trapecio
+	fmt.Println("Area trapecio:", area_trapecio)
+
+	//Area circulo
+	// a = pi x r^2
+	pi := math.Pi
+	radio := 20.0
+	var area_circulo float64 = pi * math.Pow(2, radio)
+	fmt.Println("Area circulo", area_circulo)
 }
