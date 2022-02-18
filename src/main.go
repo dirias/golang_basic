@@ -1,31 +1,35 @@
-//https://pkg.go.dev/fmt
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+func normalFunction(message string) {
+	fmt.Println(message)
+}
+
+func tripeArgument(a, b int, c string) {
+	fmt.Println(a, b, c)
+}
+
+func returnValue(a int) int {
+	return a * 2
+}
+
+func doubleReturn(a int) (c, d int) {
+	return a, a * 2
+}
 
 func main() {
-	helloMessage := "Hello"
-	worldMessage := "world"
+	normalFunction("Hola mundo")
+	tripeArgument(1, 2, "hola")
 
-	//Println - agrega el salto de linea al final
-	fmt.Println(helloMessage, worldMessage)
+	value := returnValue(2)
+	fmt.Println("Value:", value)
 
-	nombre := "Didier"
-	cursos := 400
+	value1, value2 := doubleReturn(2)
+	fmt.Println("value1 y value2:", value1, value2)
 
-	// Printf - %s string, %d un entero , %v undifiend
-	fmt.Printf("%s tiene mas de %d cursos \n", nombre, cursos)
-	fmt.Printf("%v tiene mas de %v cursos \n", nombre, cursos)
+	//si solo queremos retornar un valor cuando usamos doubleReturn, podemos usar _
 
-	//Sprintf - Genera un string y lo guardo, no lo imprime en consola
-
-	message := fmt.Sprintf("%s tiene mas de %d cursos \n", nombre, cursos)
-	fmt.Printf(message)
-
-	//Imprimir el tipo de datos
-	
-	fmt.Printf("helloMessage: %T\n", helloMessage)
-	fmt.Printf("cursos: %T\n", cursos)
+	//value1, _ := doubleReturn(2)
+	//fmt.Println("value1:", value1)
 }
