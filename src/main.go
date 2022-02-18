@@ -1,66 +1,31 @@
+//https://pkg.go.dev/fmt
 package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func main() {
-	// Calcular area de un cuadrado
-	const base_cuadrado = 10
-	areaCuadrado := base_cuadrado * base_cuadrado
-	fmt.Println("Area del Cuadrado es:", areaCuadrado)
+	helloMessage := "Hello"
+	worldMessage := "world"
 
-	x := 10
-	y := 50
+	//Println - agrega el salto de linea al final
+	fmt.Println(helloMessage, worldMessage)
 
-	// Suma
-	result := x + y
-	fmt.Println("Suma", result)
+	nombre := "Didier"
+	cursos := 400
 
-	//Resta
-	result = y - x
-	fmt.Println("Resta", result)
+	// Printf - %s string, %d un entero , %v undifiend
+	fmt.Printf("%s tiene mas de %d cursos \n", nombre, cursos)
+	fmt.Printf("%v tiene mas de %v cursos \n", nombre, cursos)
 
-	//Multiplicacion
-	result = x * y
-	fmt.Println("Multiplication", result)
+	//Sprintf - Genera un string y lo guardo, no lo imprime en consola
 
-	//Division
-	result = y / x
-	fmt.Println("Division", result)
+	message := fmt.Sprintf("%s tiene mas de %d cursos \n", nombre, cursos)
+	fmt.Printf(message)
 
-	//Modulo
-	result = y % x
-	fmt.Println("Residuo", result)
-
-	//Incremental
-	x++
-	fmt.Println("Incremental", x)
-
-	//Decrecion
-	x--
-	fmt.Println("Decremental", x)
-
-	//Area rectangulo
-	// a = b x h
-	base_rectangulo := 10
-	altura_rectangulo := 15
-	area_rectangulo := base_rectangulo * altura_rectangulo
-	fmt.Println("Area rectangulo:", area_rectangulo)
-
-	//Area trapecio
-	// a = ((b+b)/2)*h
-	base_mayor := 30
-	base_menor := 20
-	altura_trapecio := 10
-	area_trapecio := ((base_mayor + base_menor) / 2) * altura_trapecio
-	fmt.Println("Area trapecio:", area_trapecio)
-
-	//Area circulo
-	// a = pi x r^2
-	pi := math.Pi
-	radio := 20.0
-	var area_circulo float64 = pi * math.Pow(2, radio)
-	fmt.Println("Area circulo", area_circulo)
+	//Imprimir el tipo de datos
+	
+	fmt.Printf("helloMessage: %T\n", helloMessage)
+	fmt.Printf("cursos: %T\n", cursos)
 }
