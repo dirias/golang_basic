@@ -2,28 +2,21 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
-func isPalyndrome(world string){
-	var textReverse string
-	
-	for i := len(world) -1; i >= 0; i--{
-		//si no se convierte a string directamente va a retornar el codigo ASCII
-		textReverse += string(world[i])
-	}
-	if strings.ToLower(world) == strings.ToLower(textReverse){
-		fmt.Println("Es palindromo")
-	}else{
-		fmt.Println("No es palindromo")
 
-	}
-
-}
 func main() {
 
-	world := "amor a romA"
-	
-	isPalyndrome(world)
+	m := make(map[string] int)
+	m["Didier"] = 24
+	m["Didiana"] = 18
+	//Ocurre de forma concurrente, por ende no se va a hacer el output en orden
+	for i, v := range m{
+		fmt.Println(i, v)
+	}
+	//El ok retorna el true si existe y false si no, debido a que si se busca un valor que no existe
+	//Se retorna 0
+	value, ok := m["Didier"]
+	fmt.Println(value, ok)
 
 }
