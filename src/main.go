@@ -3,20 +3,21 @@ package main
 import (
 	"fmt"
 )
-
+//Es la manera de crear clases en go
+type car struct{
+	brand string
+	year int
+}
 
 func main() {
+	//Manera 1 de instanciar clases
+	myCar := car{brand: "Ford", year: 2022}
+	fmt.Println(myCar)
+	//Manera 2 de instanciar clases
+	var otherCar car //Lo instancia como un constuctor vacio
+	otherCar.brand = "Ferrari" //Al no indicar el otro valor le asigna el nulo por defecto
+	fmt.Println(otherCar)
 
-	m := make(map[string] int)
-	m["Didier"] = 24
-	m["Didiana"] = 18
-	//Ocurre de forma concurrente, por ende no se va a hacer el output en orden
-	for i, v := range m{
-		fmt.Println(i, v)
-	}
-	//El ok retorna el true si existe y false si no, debido a que si se busca un valor que no existe
-	//Se retorna 0
-	value, ok := m["Didier"]
-	fmt.Println(value, ok)
+
 
 }
